@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website UMKM Buah Segar Nusantara - Modifikasi Maksimal Plus Ikon</title>
+    
+    <!-- LINK CDN FONT AWESOME ICONS (Menghubungkan pustaka ikon modern resmi) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- KODE MODIFIKASI CSS MANUAL TINGKAT TINGGI -->
+    <style>
+        /* RESET & VARIABEL WARNA */
+        :root {
+            --primary-color: #2e7d32;      /* Hijau Kebun Premium */
+            --secondary-color: #f57c00;    /* Oranye Buah Segar */
+            --bg-light: #f1f8e9;           /* Latar Belakang Lembut Alami */
+            --text-dark: #1b5e20;          /* Teks Hijau Tua Gelap */
+            --white: #ffffff;
+            --shadow-smooth: 0 10px 30px rgba(46, 125, 50, 0.1);
+            --transition-fast: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-light);
+            color: #2c3e50;
+            scroll-behavior: smooth;
+            padding-bottom: 40px;
+        }
+
+        /* MODIFIKASI TATA LETAK NAVIGASI (Sticky & Glassmorphism) */
+        .navbar {
+            background-color: rgba(46, 125, 50, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* MODIFIKASI LOGO LENCANA GANTUNG DENGAN IKON */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo-badge {
+            background-color: var(--white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16pt;
+            color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid var(--secondary-color);
+            transition: transform 0.6s ease;
+        }
+
+        /* Animasi Berputar dan Berubah Warna Pada Lencana Ikon Saat Di-hover */
+        .logo-container:hover .logo-badge {
+            transform: rotate(360deg);
+            color: var(--secondary-color);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            color: var(--white);
+            font-size: 15pt;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .brand-tagline {
+            color: #a5d6a7;
+            font-size: 8pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* MODIFIKASI NAV LINK DENGAN IKON MENYATU */
+        .navbar nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            color: #e8f5e9;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 11pt;
+            font-weight: 600;
+            padding: 8px 16px;
+            position: relative;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Jarak antara ikon dan teks menu */
+        }
+
+        .navbar nav a i {
+            font-size: 10pt;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar nav a:hover i {
+            transform: scale(1.2); /* Ikon menu sedikit membesar saat di-hover */
+        }
+
+        /* Efek Garis Bawah Muncul dari Tengah */
+        .navbar nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--secondary-color);
+            transition: var(--transition-fast);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .navbar nav a:hover::after {
+            width: 70%;
+        }
+
+        .navbar nav a:hover {
+            color: var(--white);
+        }
+
+        /* STRUKTUR KONTAINER UTAMA */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(241,248,233,0.8) 0%, rgba(200,230,201,0.6) 100%);
+            padding: 120px 10%;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-smooth);
+        }
+
+        .hero-content h1 {
+            font-size: 32pt;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 13pt;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #556b2f;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 11pt;
+            letter-spacing: 0.5px;
+            transition: var(--transition-fast);
+            box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-main i {
+            margin-right: 8px;
+        }
+
+        .btn-main:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 124, 0, 0.4);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-smooth);
+        }
+
+        h2 {
+            color: var(--text-dark);
+            font-size: 22pt;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Menghias Ikon di Samping Judul Halaman */
+        h2 i {
+            color: var(--secondary-color);
+            font-size: 18pt;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .text-desc {
+            line-height: 1.8;
+            font-size: 11.5pt;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #455a64;
+        }
+
+        /* KATALOG PRODUK GRID DENGAN MODIFIKASI IKON CARD */
+        .grid-produk {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card-produk {
+            background: var(--white);
+            border: 1px solid #e8f5e9;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-produk:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+        }
+
+        /* Menaruh Ikon Buah Dekoratif Transparan di Pojok Kanan Atas Kartu */
+        .card-icon-bg {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 50pt;
+            color: rgba(46, 125, 50, 0.04);
+            transition: var(--transition-fast);
+        }
+
+        .card-produk:hover .card-icon-bg {
+            color: rgba(245, 124, 0, 0.08);
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .card-produk h3 {
+            color: var(--text-dark);
+            font-size: 14pt;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-produk h3 i {
+            color: var(--primary-color);
+            font-size: 12pt;
+        }
+
+        .card-produk p {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #607d8b;
+        }
+
+        .harga {
+            color: var(--secondary-color);
+            font-weight: 800;
+            font-size: 14pt;
+            display: block;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        /* FORM INPUT MODIFIKASI */
+        .form-kontak {
+            margin-top: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 10.5pt;
+        }
+
+        .form-group label i {
+            margin-right: 6px;
+            color: var(--primary-color);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 11pt;
+            color: #2c3e50;
+            transition: var(--transition-fast);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 10px rgba(46, 125, 50, 0.15);
+        }
+
+        .btn-submit {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 11pt;
+            letter-spacing: 0.5px;
+            transition: var(--transition-fast);
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #1b5e20;
+            box-shadow: 0 6px 18px rgba(27, 94, 32, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--primary-color);
+            color: var(--white);
+            margin-top: 80px;
+            font-size: 10.5pt;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENUBAR NAVIGASI UTAMA DENGAN LOGO LENCANA DAN IKON FONT AWESOME -->
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-badge">
+                <i class="fa-solid : 2026-06-20 fa-leaf"></i> <!-- Ikon Daun Organik -->
+            </div>
+            <div class="logo-text">
+                <span class="brand-name">Buah Nusantara</span>
+                <span class="brand-tagline">Toko Buah Organik</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#beranda"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#tentang"><i class="fa-solid fa-circle-info"></i> Tentang</a>
+            <a href="#produk"><i class="fa-solid fa-basket-shopping"></i> Produk</a>
+            <a href="#kontak"><i class="fa-solid fa-envelope"></i> Kontak</a>
+        </nav>
+    </header>
+
+    <!-- HALAMAN 1: BERANDA (HERO SECTION) -->
+    <section id="beranda" class="hero-section">
+        <div class="hero-content">
+            <h1>Kesegaran Alami Langsung ke Rumah Anda</h1>
+            <p>Kami menyajikan berbagai macam pilihan buah lokal dan impor organik pilihan kualitas terbaik dengan proses penyortiran yang higienis.</p>
+            <a href="#produk" class="btn-main"><i class="fa-solid fa-magnifying-glass"></i> Lihat Katalog Buah</a>
+        </div>
+    </section>
+
+    <!-- HALAMAN 2: TENTANG KAMI -->
+    <main id="tentang" class="container">
+        <h2><i class="fa-solid fa-seedling"></i> Cerita & Filosofi Kami</h2>
+        <p class="text-desc">Buah Segar Nusantara berkomitmen penuh untuk menghadirkan produk hortikultura terbaik bagi keluarga Indonesia. Setiap produk yang ada di toko kami telah melewati uji kelayakan standar guna menjaga kadar air dan vitamin di dalamnya tetap utuh.</p>
+        <p class="text-desc">Kami mendukung penuh kesejahteraan petani buah lokal dengan mengambil hasil panen langsung tanpa melalui perantara pihak ketiga demi memajukan ekonomi daerah.</p>
+    </main>
+
+    <!-- HALAMAN 3: KATALOG PRODUK -->
+    <section id="produk" class="container">
+        <h2><i class="fa-solid fa-apple-whole"></i> Katalog Buah Pilihan Hari Ini</h2>
+        <p class="text-desc">Garansi segar dan manis. Pilih buah favorit Anda untuk menjaga kesehatan tubuh optimal:</p>
+        
+        <div class="grid-produk">
+            <!-- Produk 1 -->
+            <div class="card-produk">
+                <div class="card-icon-bg"><i class="fa-solid fa-lemon"></i></div> <!-- Ikon Latar Transparan -->
+                <h3><i class="fa-solid fa-check-to-slot"></i> Mangga Arumanis</h3>
+                <p>Mangga lokal pilihan dengan daging buah tebal, serat halus, dan manis alami yang pekat.</p>
+                <span class="harga">Rp 25.000 / Kg</span>
+            </div>
+            <!-- Produk 2 -->
+            <div class="card-produk">
+                <div class="card-icon-bg"><i class="fa-solid fa-apple-whole"></i></div>
+                <h3><i class="fa-solid fa-check-to-slot"></i> Apel Fuji Premium</h3>
+                <p>Apel impor renyah dengan kandungan air melimpah, sangat cocok untuk konsumsi harian atau jus kesehatan.</p>
+                <span class="harga">Rp 35.000 / Kg</span>
+            </div>
+            <!-- Produk 3 -->
+            <div class="card-produk">
+                <div class="card-icon-bg"><i class="fa-solid fa-strawberry"></i></div>
+                <h3><i class="fa-solid fa-check-to-slot"></i> Jeruk Sunkist</h3>
+                <p>Jeruk segar kaya akan Vitamin C dengan rasa manis keasaman yang seimbang dan menyegarkan.</p>
+                <span class="harga">Rp 40.000 / Kg</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN 4: KONTAK INTERAKTIF -->
+    <section id="kontak" class="container">
+        <h2><i class="fa-solid fa-phone-volume"></i> Layanan Konsumen & Pemesanan</h2>
+        <p class="text-desc">Kirim daftar belanjaan buah Anda atau ajukan pertanyaan mengenai ketersediaan stok buah musiman:</p>
+        
+        <form class="form-kontak" onsubmit="event.preventDefault(); alert('Pesanan simulasi berhasil dikirim!');">
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama lengkap Anda" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-clipboard-list"></i> Daftar Pesanan / Pesan Tambahan</label>
+                <textarea placeholder="Contoh: Mangga 2kg, Apel 1kg. Kirim ke alamat..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan Sekarang</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Buah Segar Nusantara - Tugas Kelompok Pemrograman Web Terstruktur.</p>
+    </footer>
+
+</body>
+</html>
